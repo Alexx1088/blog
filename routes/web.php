@@ -19,7 +19,25 @@ Route::group(['namespace' => 'App\Http\Controllers\Main'], function () {
 
 });
 
+Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin'], function (){
+
+    Route::group(['namespace' => 'Main'], function () {
+
+    Route::get('/', 'IndexController');
+    });
+
+});
+
+
 Auth::routes();
+
+
+
+
+
+
+
+
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //('home');
