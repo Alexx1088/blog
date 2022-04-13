@@ -6,15 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class EditController extends Controller
 {
-  public function __invoke()
+  public function __invoke(Category $category)
   {
       // TODO: Implement __invoke() method.
-
-      $categories = Category::all();
-
-    return view(' admin.categories.index', compact('categories'));
+   //   dd('hey!');
+    return view(' admin.categories.edit', compact('category'));
 
   }
 }
