@@ -14,7 +14,7 @@ class UpdateController extends Controller
     $data = $request->validated();
        $category->update($data);
    // dd($category);
-    return view('admin.categories.show', compact('category'));
+    return view('admin.category.show', compact('category'));
 
   }
 }

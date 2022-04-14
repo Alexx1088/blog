@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ class CreateController extends Controller
   {
       // TODO: Implement __invoke() method.
    //   dd('hey!');
-    return view(' admin.category.create');
+    return view(' admin.tag.create');
 
   }
 }

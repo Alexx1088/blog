@@ -12,7 +12,7 @@ class EditController extends Controller
   {
       // TODO: Implement __invoke() method.
    //   dd('hey!');
-    return view(' admin.categories.edit', compact('category'));
+    return view(' admin.category.edit', compact('category'));
 
   }
 }
