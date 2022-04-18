@@ -41,6 +41,8 @@
 
     @csrf
 @method('PATCH')
+
+
     <div class="form-group">
 
         <input type="text" class="form-control" name="title" value="{{$post->title}}"  placeholder="name of post">
@@ -50,6 +52,9 @@
     </div>
 
 <input type="submit" class="btn btn-primary" value="Update">
+
+
+    
 </form>
                 </div>
 

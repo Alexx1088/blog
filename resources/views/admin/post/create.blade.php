@@ -40,7 +40,7 @@
 
 
                         <form action="{{route('admin.post.store')}}" method="POST"
-                              class="w-65" enctype="multipart/form-data" >
+                              class="w-65" enctype="multipart/form-data">
 
                             @csrf
 
@@ -73,6 +73,11 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+
+                                @error('preview_image')
+                                <div class="text-danger"> {{$message}}</div>
+                                @enderror
+
                             </div>
 
                             <div class="form-group ">
@@ -86,20 +91,46 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                @error('main_image')
+                                <div class="text-danger"> {{$message}}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label>Select category</label>
-                                <select name = "category_id" class="form-control">
+                                <select name="category_id" class="form-control">
                                     @foreach($categories as $category)
-                                    <option value="{{$category->id}}">{{$category->title}}</option>
+                                        <option value="{{$category->id}}"
+
+                                                {{ $category->id == old('$category_id') ? 'selected': ''}}
+
+                                        >{{$category->title}}</option>
                                     @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tags</label>
+                                <select class="select2" name="tag_ids[]" multiple="multiple"
+                                        data-placeholder="Select tags" style="width: 100%;">
+
+                                    @foreach($tags as$tag)
+                                        <option {{ is_array( old('tag_ids')) && in_array($tag->id, old('tag_ids')
+                                      ) ? 'selected' : '' }}
+                                                value="{{$tag->id}}">{{$tag->title}}
+                                        </option>
+
+                                    @endforeach
+
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Add">
                             </div>
+
+
+
                         </form>
                     </div>
 
