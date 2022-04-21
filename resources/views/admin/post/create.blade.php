@@ -40,7 +40,7 @@
 
 
                         <form action="{{route('admin.post.store')}}" method="POST"
-                              class="w-65" enctype="multipart/form-data">
+                              class="w-65"  enctype="multipart/form-data">
 
                             @csrf
 
@@ -107,6 +107,9 @@
                                         >{{$category->title}}</option>
                                     @endforeach
                                 </select>
+                                @error('category_id')
+                                <div class="text-danger"> {{$message}}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -123,6 +126,9 @@
                                     @endforeach
 
                                 </select>
+                                @error('tag_ids')
+                                <div class="text-danger"> {{$message}}</div>
+                                @enderror
                             </div>
 
                             <div class="form-group">

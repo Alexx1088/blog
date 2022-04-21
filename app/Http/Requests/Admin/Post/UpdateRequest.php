@@ -25,6 +25,27 @@ class UpdateRequest extends FormRequest
     {
         return [
             'title'=>'required|string',
+            'content'=>'required|string',
+            'preview_image'=>'nullable|file',
+            'main_image'=>'required|file',
+            'category_id'=>'required|integer|exists:categories,id',
+            'tag_ids'=>'nullable|array',
+            'tag_ids.*'=>'nullable|integer|exists:tags,id',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'This field must be filled',
+            'title.string' => 'This data must be string type',
+            'preview_image.file' => 'need to select a file',
+            'main_image.required' => 'This field must be filled',
+            'main_image.file' => 'need to select a file',
+            'category_id.required' => 'this field must be filled',
+            'category_id.integer' => 'category_id must be integer',
+            'category_id.exists' => 'category_id must be in DB',
+            'tag_ids.array' => 'need to send the array of data',
         ];
     }
 }
