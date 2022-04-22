@@ -54,22 +54,20 @@
         <div class="text-danger"> {{$message}}</div>
         @enderror
     </div>
-    <div class="form-group">
+   {{-- <div class="form-group">
 
         <input type="text" class="form-control" name="password"  placeholder="enter your password">
         @error('password')
         <div class="text-danger"> {{$message}}</div>
         @enderror
-    </div>
+    </div>--}}
     <div class="form-group">
         <label>Select role</label>
         <select name="role" class="form-control">
             @foreach($roles as $id => $role)
                 <option value="{{$id}}"
 
-                   {{--   {{ $role->id == old('$category_id') ? 'selected': ''}}--}}
                         {{ $id == old('$role_id') ? 'selected': ''}}
-                      {{--  {{ $id == old('$role') ? 'selected': ''}}--}}
 
                 >{{$role}}</option>
             @endforeach
