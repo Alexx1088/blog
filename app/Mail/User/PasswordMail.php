@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 //use App\Http\Controllers\Admin\User\StoreController
 
-class PasswordMail extends Mailable
+class PasswordMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
