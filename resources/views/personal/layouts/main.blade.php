@@ -23,7 +23,13 @@
     <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{asset('plugins/daterangepicker/daterangepicker.css')}}">
+    <style>
+        li {
+            list-style-type: none; /* Убираем маркеры */
+        }
 
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -45,6 +51,15 @@
                     <i class="fas fa-bars"></i></a>
             </li>
         </ul>
+<ul>
+                <li class="nav-item ">
+                    <a class="nav-link " href="{{ route('main.index') }}" >
+                        <h3> Blog </h3>
+                    </a>
+                </li>
+</ul>
+
+
         <ul class="navbar-nav">
             <li class="nav-item">
                 <form action="{{route('logout')}}" method="POST">

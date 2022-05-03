@@ -46,7 +46,7 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
+                       <li class="nav-item">
                 <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <input type="submit" class="btn btn-primary" value="logout">

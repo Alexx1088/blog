@@ -26,6 +26,18 @@
                     <li class="nav-item ">
                     <a class="nav-link " href="{{ route('main.index') }}" >Blog</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{{ route('category.index') }}" >Categories</a>
+                    </li>
+
+                    <li class="nav-item ">
+                        @auth()
+                        <a class="nav-link " href="{{ route('personal.main.index') }}" >Personal account</a>
+                        @endauth
+                   @guest()
+                        <a class="nav-link " href="{{ route('personal.main.index') }}" >Enter</a>
+                       @endguest
+                    </li>
                       </ul>
             </div>
         </nav>
@@ -34,21 +46,21 @@
 
 @yield('content')
 
-<section class="edica-footer-banner-section">
+<section class="edica-footer-banner-section ">
     <div class="container">
-     {{--   <div class="footer-banner" data-aos="fade-up">
-            <h1 class="banner-title">Download it now.</h1>
+        <div class="footer-banner" data-aos="fade-up">
+            <h3 class="banner-title">Download it now.</h3>
             <div class="banner-btns-wrapper">
                 <button class="btn btn-success"> <img src="{{asset('assets/images/apple@1x.svg')}}" alt="ios" class="mr-2"> App Store</button>
                 <button class="btn btn-success"> <img src="{{asset('assets/images/android@1x.svg')}}" alt="android" class="mr-2"> Google Play</button>
             </div>
             <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>
-        </div>--}}
+        </div>
     </div>
 </section>
-<footer class="edica-footer" data-aos="fade-up">
-    <div class="container">
-        <div class="row footer-widget-area">
+<footer class="edica-footer " data-aos="fade-up">
+    <div class="container ">
+        <div class="row footer-widget-area ">
             <div class="col-md-3">
                 <a href="index.html" class="footer-brand-wrapper">
                     <img src="{{asset('assets/images/logo.svg')}}" alt="edica logo">
